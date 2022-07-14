@@ -11,6 +11,8 @@ import { QuestionState, Difficulty } from './API';
 // Styles
 import { GlobalStyle, Wrapper } from './App.styles';
 
+import { QUESTIONS } from './QUESTIONS';
+
 export type AnswerObject = {
   question: string;
   answer: string;
@@ -18,7 +20,7 @@ export type AnswerObject = {
   correctAnswer: string;
 }
 
-const TOTAL_QUESTIONS = 2;
+const TOTAL_QUESTIONS = QUESTIONS.length;
 
 function App() {
 
@@ -82,13 +84,19 @@ function App() {
     <>
     <GlobalStyle />
     <Wrapper>
-      <h1>REACT QUIZ</h1>
-      {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+      <h1>TATS' QUIZ</h1>
+      {gameOver ? (
         <button className="start" onClick={startQuiz}>
           Start
         </button>
       ) : null }
-      {!gameOver ? <p className="score">Score: {score}</p> : null}
+
+      {userAnswers.length === TOTAL_QUESTIONS ? (
+        <button className="start" onClick={startQuiz}>
+          Play Again
+        </button>
+      ) : null }
+      {!gameOver ? <p className="score">Score: {score}/{TOTAL_QUESTIONS} ({score / TOTAL_QUESTIONS * 100}%)</p> : null}
       {loading && <p>Loading Questions ...</p>}
       {!loading && !gameOver && (
         <QuestionCard 
@@ -103,7 +111,7 @@ function App() {
 
       {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ? (
         <button className="next" onClick={nextQuestion}>
-          Next Question
+          Next
         </button>
       ) : null}
     </Wrapper>

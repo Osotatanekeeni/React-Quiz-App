@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+    width: 70%;
     max-width: 1100px;
-    background: #ebfeff;
+    background: #cfd8dc;
     border-radius: 10px;
     border: 2px solid #0085a3;
     padding: 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     text-align: center;
+    box-shadow: 10px 10px #9e9e9e ;
 
     p {
         font-size: 1rem;
@@ -38,14 +40,14 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
         margin: 5px 0;
         background: ${({ correct, userClicked }) => 
             correct
-                ? 'linear-gradient(90deg, #56ffa4, #59bc86)' 
+                ? 'linear-gradient(90deg, #00e676, #00c853 )' 
                 : !correct && userClicked
                 ? 'linear-gradient(90deg, #ff5656, #c16868)'
-                : 'linear-gradient(90deg, #56ccff, #6eafb4)'};
+                : 'linear-gradient(90deg, #757575 , #424242 )'};
                 //effect 0.4s
         animation: ${({ correct, userClicked }) =>
             correct && !userClicked
-                ? 'effect 0.5s'
+                ? 'effect 0.2s'
                 : 'none'};
         border: 3px solid #fff;
         box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.1);

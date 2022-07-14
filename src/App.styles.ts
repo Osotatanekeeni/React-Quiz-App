@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import BGImage from "../src/images/background-image.png";
+// import BGImage from "../src/images/sunset.png";
 
 export const GlobalStyle = createGlobalStyle`
     html {
@@ -7,12 +7,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-image: url(${BGImage});
         background-size: cover;
         margin: 0;
         padding: 0 20px;
         display: flex;
         justify-content: center;
+        backdrop-filter: blur(5px);
     }
 
     * { 
@@ -31,23 +31,23 @@ export const Wrapper = styled.div`
     }
 
     .score {
-        color: #fff;
+        color: #212121;
         font-size: 2rem;
+        font-family: 'Chewy', cursive;
         margin: 0;
     }
 
     h1 {
         font-family: Fascinate Inline, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        background-image: linear-gradient(180deg, #fff, #87f1ff);
-        backdrop-filter: blur(5px);
+        background-color: #212121;
         background-size: 100%;
         background-clip: text;
         -webkit-background-clip: text;
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
         -moz-text-fill-color: transparent;
-        filter: drop-shadow(2px 2px #0085a3);
-        font-size: 70px;
+        filter: drop-shadow(5px 5px #616161);
+        font-size: 10rem;
         font-weight: 400;
         text-align: center;
         margin: 20px;
