@@ -39,6 +39,7 @@ export const Wrapper = styled.div`
     h1 {
         font-family: Fascinate Inline, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         background-image: linear-gradient(180deg, #fff, #87f1ff);
+        backdrop-filter: blur(5px);
         background-size: 100%;
         background-clip: text;
         -webkit-background-clip: text;

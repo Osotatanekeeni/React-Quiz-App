@@ -26,6 +26,7 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
 
     :hover {
         opacity: 0.8;
+        
     }
 
     button {
@@ -41,11 +42,42 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
                 : !correct && userClicked
                 ? 'linear-gradient(90deg, #ff5656, #c16868)'
                 : 'linear-gradient(90deg, #56ccff, #6eafb4)'};
+                //effect 0.4s
+        animation: ${({ correct, userClicked }) =>
+            correct && !userClicked
+                ? 'effect 0.5s'
+                : 'none'};
         border: 3px solid #fff;
         box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         color: #fff;
         text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    @keyframes effect {
+        0% {
+            transform: translateX(0px) rotate(0deg);
+        }
+
+        20% {
+            transform: translateX(-4px) rotate(-4deg);
+        }
+
+        40% {
+            transform: translateX(-2px) rotate(-2deg);
+        }
+
+        60% {
+            transform: translateX(4px) rotate(4deg);
+        }
+
+        80% {
+            transform: translateX(2px) rotate(2deg);
+        }
+
+        100% {
+            transform: translateX(0px) rotate(0deg);
+        }
     }
         
 `;

@@ -18,7 +18,7 @@ export type AnswerObject = {
   correctAnswer: string;
 }
 
-const TOTAL_QUESTIONS = 10;
+const TOTAL_QUESTIONS = 2;
 
 function App() {
 
@@ -33,7 +33,7 @@ function App() {
   // console.log(questions)
 
 
-  const startTrivia = async () => {
+  const startQuiz = async () => {
     setLoading(true);
     setGameOver(false);
 
@@ -84,7 +84,7 @@ function App() {
     <Wrapper>
       <h1>REACT QUIZ</h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-        <button className="start" onClick={startTrivia}>
+        <button className="start" onClick={startQuiz}>
           Start
         </button>
       ) : null }
